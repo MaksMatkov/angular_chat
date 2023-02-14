@@ -1,0 +1,19 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  background-color: #989ad7;
+  margin: 13px;
+  padding: 14px;
+  border-radius: 1em;
+  width: 80%;
+
+  .userName{
+    font-size: larger;
+    font-weight: 500;
+  }
+  .date{
+    display: flex;
+    justify-content: flex-end;
+    color: grey;
+  }
+}

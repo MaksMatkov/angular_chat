@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="m-controlls">
+      <button mat-fab color="primary" (click)="openSettingsPopup()" aria-label="Example icon button with a delete icon">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar>
+      <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Chat power by MaksMatkov </span>
+      <span class="example-spacer"></span>
+      <span>Group: {{groupName}} | User: {{userName}}</span>
+    </mat-toolbar>
+    <router-outlet style="display: none;"></router-outlet>
+  </div>
+</mat-drawer-container>

@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Chat Settings</h1>
+<div mat-dialog-content class="dialog-body">
+  <mat-form-field appearance="outline">
+    <mat-label>User Name</mat-label>
+    <input matInput placeholder="User Name" (change)="Save()" type="text" [(ngModel)]="userName">
+    <button *ngIf="userName" matSuffix mat-icon-button aria-label="Clear" (click)="userName=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Group Name</mat-label>
+    <input matInput placeholder="Group Name" (change)="Save()" type="text" [(ngModel)]="groupName">
+    <button *ngIf="groupName"  matSuffix mat-icon-button aria-label="Clear" (click)="groupName=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

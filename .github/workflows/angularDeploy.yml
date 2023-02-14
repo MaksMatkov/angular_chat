@@ -1,0 +1,36 @@
+name: Angular Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+      
+    - name: Install dependencies
+      working-directory: ./Client
+      run: npm install
+
+    - name: Build
+      working-directory: ./Client
+      run: ng build
+
+    - name: Deploy to server
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.DEPLOY_SERVER }}
+        username: ${{ secrets.DEPLOY_USERNAME }}
+        password: ${{ secrets.DEPLOY_PASSWORD }}
+        local-dir: ./Client/dist/client/
+        server-dir: rootfolder/
+        exclude: '**/webapi/**'
+        dangerous-clean-slate: true

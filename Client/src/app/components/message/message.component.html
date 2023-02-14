@@ -1,0 +1,7 @@
+<div class="cover" [style]="isMy ? 'display: flex;justify-content: flex-end;' : ''">
+  <div class="body" [style]="isMy ? 'background-color: #f1f1fb;' : ''">
+    <div class="userName">{{msg.userName}}:</div>
+    <div class="text">{{msg.text}}</div>
+    <div class="date">{{msg.date | date:'shortTime'}}</div>
+  </div>
+</div>
